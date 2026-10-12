@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FineFoods AI - Model Tournament & Benchmarks</title>
+  <meta name="description" content="Explore real measured benchmark evaluation metrics comparing 6 machine learning algorithms and the Combined Ensemble Average on Amazon Fine Food reviews.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    .cm-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .cm-table th, .cm-table td {
+      padding: 0.35rem 0.5rem;
+      border: 1px solid var(--border-glass);
+    }
+    .cm-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .cm-val {
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .cm-correct {
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+    }
+    .cm-incorrect {
+      background: rgba(239, 68, 68, 0.12);
+      color: #dc2626;
+    }
+    .metric-badges-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .metric-badge-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glass);
+      border-radius: 8px;
+      padding: 0.4rem;
+      text-align: center;
+    }
+    .metric-badge-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .metric-badge-lbl {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .bench-chart-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.65rem;
+    }
+    .bench-chart-name {
+      width: 190px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: right;
+    }
+    .bench-chart-track {
+      flex: 1;
+      height: 22px;
+      background: rgba(0, 0, 0, 0.06);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+    }
+    [data-theme="dark"] .bench-chart-track {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .bench-chart-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding-left: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #fff;
+      transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Soft Ambient Gradient Blobs (Liquid Glass Reflection) -->
+  <div class="liquid-bg">
+    <div class="liquid-orb orb-pink"></div>
+    <div class="liquid-orb orb-blue"></div>
+    <div class="liquid-orb orb-purple"></div>
+  </div>
+
+  <div class="site-wrapper">
+
+    <!-- Floating Pill-Shaped Navbar -->
+    <div class="navbar-pill-wrapper">
+      <header class="navbar-pill">
+        
+        <!-- Brand Link -->
+        <a href="/" class="brand-link">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="brand-title">FineFoods<span class="brand-ai-pill">AI</span></span>
+        </a>
+
+        <!-- Center Nav Links -->
+        <nav class="nav-links">
+          <a href="/" class="nav-link">Live Studio</a>
+          <a href="/batch" class="nav-link">Batch Check</a>
+          <a href="/benchmarks" class="nav-link active">Which model is best?</a>
+        </nav>
+
+        <!-- Right Actions: Dark Mode Switch + 1 Main CTA -->
+        <div class="nav-actions">
+          <label class="ios-switch" title="Toggle Light / Dark Mode">
+            <input type="checkbox" id="ios-theme-toggle" aria-label="Toggle Dark Mode">
+            <span class="ios-switch-slider">
+              <span class="ios-switch-knob">🌙</span>
+            </span>
+          </label>
+
+          <a href="/" class="btn-ios-primary">
+            <span>Try an Example</span>
+          </a>
+        </div>
+
+      </header>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="section-container" id="models-section">
+      
+      <div class="section-header-center">
+        <div class="hero-pill-badge">
+          <span class="pulse-dot"></span>
+          <span>Scientific Model Tournament</span>
+        </div>
+        <h1 class="section-heading">Which model is best?</h1>
+        <p class="section-subheading">
+          Measured evaluation metrics from the held-out test split of real Amazon reviews. Compare all 6 algorithms and the Combined Ensemble Average across accuracy, F1, precision, recall, and ROC-AUC.
+        </p>
+
+        <!-- Mode Toggle: Measured Test Run vs Historical Benchmarks -->
+        <div style="display: inline-flex; gap: 0.5rem; background: var(--border-glass); padding: 0.3rem; border-radius: 9999px; margin-top: 1rem;">
+          <button class="segment-btn active" id="btn-show-measured" style="padding: 0.45rem 1rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">
+            📊 Measured Test Run (Current Models)
+          </button>
+          <button class="segment-btn" id="btn-show-historical" style="padding: 0.45rem 1rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">
+            📚 Historical Notebooks (34 Experiments)
+          </button>
+        </div>
+      </div>
+
+      <!-- Dataset Class Distribution & Audit Overview Card -->
+      <div class="liquid-card" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin: 0;">
+              Dataset Distribution & Integrity Audit
+            </h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);" id="eval-dataset-meta">
+              Stanford SNAP Amazon Fine Food Reviews • Stratified Split (80% Train / 20% Test)
+            </span>
+          </div>
+          <span class="tag-pill happy" style="font-size: 0.75rem;">Cleaned & Deduplicated</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem;">
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="stat-total-raw">568,454</div>
+            <div class="metric-badge-lbl">Original Reviews</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="stat-clean-reviews" style="color: #2563eb;">393,931</div>
+            <div class="metric-badge-lbl">Clean Reviews</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="stat-pos-reviews" style="color: #059669;">307,052</div>
+            <div class="metric-badge-lbl">Positive (4-5★)</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="stat-neg-reviews" style="color: #e11d48;">57,107</div>
+            <div class="metric-badge-lbl">Negative (1-2★)</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="stat-neutral-reviews" style="color: #d97706;">29,772</div>
+            <div class="metric-badge-lbl">Neutral (3★)</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="stat-test-size" style="color: #7c3aed;">8,000</div>
+            <div class="metric-badge-lbl">Test Evaluated</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Comparison Bar Chart -->
+      <div class="liquid-card" style="margin-bottom: 2.5rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 0;">
+            ROC-AUC Leaderboard Comparison
+          </h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Measured on held-out test data</span>
+        </div>
+        <div id="leaderboard-chart-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Crown Card: All 6 Models Combined (Ensemble Average) -->
+      <div class="liquid-card model-card ensemble-card" id="card-ensemble">
+        <div class="ensemble-card-body">
+          <div class="ensemble-card-info">
+            <div class="ensemble-card-header">
+              <span class="ensemble-card-icon">👑</span>
+              <h2 class="ensemble-card-title">All 6 models combined (Ensemble)</h2>
+              <span class="tag-pill happy">Consensus Vote</span>
+            </div>
+            <p class="ensemble-card-desc">
+              Averages the probability outputs of all 6 algorithms: <code>P_ens = 1/6 ∑ P_i</code>. By combining independent inductive biases, the ensemble achieves high stability and 98.99% recall on positive feedback.
+            </p>
+          </div>
+
+          <div class="ensemble-card-score">
+            <div class="model-score-box score-box">
+              <div class="score-label-above">
+                <span>ROC-AUC</span>
+                <span class="tooltip-trigger" tabindex="0">
+                  i
+                  <span class="tooltip-bubble">Probability that the ensemble ranks a random positive review higher than a random negative review.</span>
+                </span>
+              </div>
+              <div class="score-val-line">
+                <span class="score-val-num" id="ens-auc-val">95.4</span>
+                <span class="score-val-max">/ 100</span>
+              </div>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" id="ens-auc-bar" style="width: 95.4%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Badges Row -->
+        <div class="metric-badges-row">
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="ens-acc-val">92.4%</div>
+            <div class="metric-badge-lbl">Accuracy</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="ens-f1-val">95.6%</div>
+            <div class="metric-badge-lbl">F1-Score</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="ens-rec-val">99.0%</div>
+            <div class="metric-badge-lbl">Recall</div>
+          </div>
+          <div class="metric-badge-box">
+            <div class="metric-badge-val" id="ens-prec-val">92.5%</div>
+            <div class="metric-badge-lbl">Precision</div>
+          </div>
+        </div>
+
+        <details class="technical-accordion" style="margin-top: 1rem;">
+          <summary>Confusion Matrix & Technical Specs</summary>
+          <div style="padding-top: 0.75rem;">
+            <table class="cm-table" id="cm-table-ensemble">
+              <thead>
+                <tr>
+                  <th colspan="2" rowspan="2"></th>
+                  <th colspan="2">Predicted Label</th>
+                </tr>
+                <tr>
+                  <th>Negative (0)</th>
+                  <th>Positive (1)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th rowspan="2">Actual</th>
+                  <th>Negative</th>
+                  <td class="cm-correct" id="cm-ens-tn">712 (TN)</td>
+                  <td class="cm-incorrect" id="cm-ens-fp">543 (FP)</td>
+                </tr>
+                <tr>
+                  <th>Positive</th>
+                  <td class="cm-incorrect" id="cm-ens-fn">68 (FN)</td>
+                  <td class="cm-correct" id="cm-ens-tp">6677 (TP)</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tech-specs-table" style="margin-top: 0.75rem;">
+              <tr><td>Formula</td><td>P_ensemble = (P_LR + P_NB + P_SVM + P_XGB + P_RF + P_KNN) / 6</td></tr>
+              <tr><td>Average Agreement</td><td id="ens-agree-stat">94.37% consensus across all 6 models</td></tr>
+              <tr><td>Inference Latency</td><td id="ens-lat-stat">0.50 ms per review</td></tr>
+              <tr><td>Improvement Finding</td><td>Neutralizes single-model errors and yields highest positive recall (98.99%).</td></tr>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <!-- The 6 Model Cards Grid -->
+      <div class="models-grid-simple" id="models-grid-container">
+        
+        <!-- 1. Logistic Regression -->
+        <div class="liquid-card model-card model-card-simple" id="card-lr">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">⚖️</div>
+            <h3 class="model-card-name">Logistic Regression</h3>
+          </div>
+          <p class="model-one-liner">Optimal linear margin with L2 regularization ($C=5.0$) on 10,000 TF-IDF features.</p>
+          
+          <div class="model-score-box score-box">
+            <div class="score-label-above">
+              <span>ROC-AUC</span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num" id="lr-auc-val">95.6</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" id="lr-auc-bar" style="width: 95.6%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-badges-row">
+            <div class="metric-badge-box"><div class="metric-badge-val" id="lr-acc-val">92.8%</div><div class="metric-badge-lbl">Accuracy</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="lr-f1-val">95.8%</div><div class="metric-badge-lbl">F1</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="lr-rec-val">97.7%</div><div class="metric-badge-lbl">Recall</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="lr-prec-val">94.0%</div><div class="metric-badge-lbl">Precision</div></div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Confusion Matrix & Specs</summary>
+            <table class="cm-table">
+              <tr><th colspan="2">Actual vs Pred</th><th>Neg (0)</th><th>Pos (1)</th></tr>
+              <tr><th rowspan="2">Act</th><th>Neg</th><td class="cm-correct" id="cm-lr-tn">833</td><td class="cm-incorrect" id="cm-lr-fp">422</td></tr>
+              <tr><th>Pos</th><td class="cm-incorrect" id="cm-lr-fn">155</td><td class="cm-correct" id="cm-lr-tp">6590</td></tr>
+            </table>
+            <table class="tech-specs-table" style="margin-top: 0.5rem;">
+              <tr><td>Family</td><td>Linear Classification</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF (10,000 N-grams)</td></tr>
+              <tr><td>Training Time</td><td id="lr-time-stat">0.41 s</td></tr>
+              <tr><td>Latency</td><td id="lr-lat-stat">0.004 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 2. Naive Bayes -->
+        <div class="liquid-card model-card model-card-simple" id="card-nb">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">⚡</div>
+            <h3 class="model-card-name">Multinomial Naive Bayes</h3>
+          </div>
+          <p class="model-one-liner">Conditional word independence with Laplace smoothing ($\alpha=0.10$) on Bag of Words counts.</p>
+          
+          <div class="model-score-box score-box">
+            <div class="score-label-above">
+              <span>ROC-AUC</span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num" id="nb-auc-val">92.6</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" id="nb-auc-bar" style="width: 92.6%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-badges-row">
+            <div class="metric-badge-box"><div class="metric-badge-val" id="nb-acc-val">90.9%</div><div class="metric-badge-lbl">Accuracy</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="nb-f1-val">94.6%</div><div class="metric-badge-lbl">F1</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="nb-rec-val">94.0%</div><div class="metric-badge-lbl">Recall</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="nb-prec-val">95.2%</div><div class="metric-badge-lbl">Precision</div></div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Confusion Matrix & Specs</summary>
+            <table class="cm-table">
+              <tr><th colspan="2">Actual vs Pred</th><th>Neg (0)</th><th>Pos (1)</th></tr>
+              <tr><th rowspan="2">Act</th><th>Neg</th><td class="cm-correct" id="cm-nb-tn">933</td><td class="cm-incorrect" id="cm-nb-fp">322</td></tr>
+              <tr><th>Pos</th><td class="cm-incorrect" id="cm-nb-fn">404</td><td class="cm-correct" id="cm-nb-tp">6341</td></tr>
+            </table>
+            <table class="tech-specs-table" style="margin-top: 0.5rem;">
+              <tr><td>Family</td><td>Probabilistic NLP</td></tr>
+              <tr><td>Featurization</td><td>CountVectorizer (BoW)</td></tr>
+              <tr><td>Training Time</td><td id="nb-time-stat">0.01 s</td></tr>
+              <tr><td>Latency</td><td id="nb-lat-stat">0.002 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 3. SVM -->
+        <div class="liquid-card model-card model-card-simple" id="card-svm">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">🛡️</div>
+            <h3 class="model-card-name">Support Vector Machine</h3>
+          </div>
+          <p class="model-one-liner">Maximum margin hyperplane via modified Huber loss with calibrated probability outputs.</p>
+          
+          <div class="model-score-box score-box">
+            <div class="score-label-above">
+              <span>ROC-AUC</span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num" id="svm-auc-val">95.1</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" id="svm-auc-bar" style="width: 95.1%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-badges-row">
+            <div class="metric-badge-box"><div class="metric-badge-val" id="svm-acc-val">92.7%</div><div class="metric-badge-lbl">Accuracy</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="svm-f1-val">95.8%</div><div class="metric-badge-lbl">F1</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="svm-rec-val">98.0%</div><div class="metric-badge-lbl">Recall</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="svm-prec-val">93.6%</div><div class="metric-badge-lbl">Precision</div></div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Confusion Matrix & Specs</summary>
+            <table class="cm-table">
+              <tr><th colspan="2">Actual vs Pred</th><th>Neg (0)</th><th>Pos (1)</th></tr>
+              <tr><th rowspan="2">Act</th><th>Neg</th><td class="cm-correct" id="cm-svm-tn">806</td><td class="cm-incorrect" id="cm-svm-fp">449</td></tr>
+              <tr><th>Pos</th><td class="cm-incorrect" id="cm-svm-fn">135</td><td class="cm-correct" id="cm-svm-tp">6610</td></tr>
+            </table>
+            <table class="tech-specs-table" style="margin-top: 0.5rem;">
+              <tr><td>Family</td><td>Max-Margin Linear Hyperplane</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF (10,000 N-grams)</td></tr>
+              <tr><td>Training Time</td><td id="svm-time-stat">0.17 s</td></tr>
+              <tr><td>Latency</td><td id="svm-lat-stat">0.003 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 4. XGBoost -->
+        <div class="liquid-card model-card model-card-simple" id="card-xgb">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">🚀</div>
+            <h3 class="model-card-name">XGBoost Classifier</h3>
+          </div>
+          <p class="model-one-liner">100 gradient-boosted decision trees sequentially fitting negative gradient residuals.</p>
+          
+          <div class="model-score-box score-box">
+            <div class="score-label-above">
+              <span>ROC-AUC</span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num" id="xgb-auc-val">92.9</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" id="xgb-auc-bar" style="width: 92.9%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-badges-row">
+            <div class="metric-badge-box"><div class="metric-badge-val" id="xgb-acc-val">90.3%</div><div class="metric-badge-lbl">Accuracy</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="xgb-f1-val">94.5%</div><div class="metric-badge-lbl">F1</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="xgb-rec-val">98.9%</div><div class="metric-badge-lbl">Recall</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="xgb-prec-val">90.5%</div><div class="metric-badge-lbl">Precision</div></div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Confusion Matrix & Specs</summary>
+            <table class="cm-table">
+              <tr><th colspan="2">Actual vs Pred</th><th>Neg (0)</th><th>Pos (1)</th></tr>
+              <tr><th rowspan="2">Act</th><th>Neg</th><td class="cm-correct" id="cm-xgb-tn">555</td><td class="cm-incorrect" id="cm-xgb-fp">700</td></tr>
+              <tr><th>Pos</th><td class="cm-incorrect" id="cm-xgb-fn">76</td><td class="cm-correct" id="cm-xgb-tp">6669</td></tr>
+            </table>
+            <table class="tech-specs-table" style="margin-top: 0.5rem;">
+              <tr><td>Family</td><td>Gradient Boosted Trees</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF Sparse</td></tr>
+              <tr><td>Training Time</td><td id="xgb-time-stat">27.11 s</td></tr>
+              <tr><td>Latency</td><td id="xgb-lat-stat">0.025 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 5. Random Forest -->
+        <div class="liquid-card model-card model-card-simple" id="card-rf">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">🌲</div>
+            <h3 class="model-card-name">Random Forest</h3>
+          </div>
+          <p class="model-one-liner">100 de-correlated bagging decision trees with feature sub-sampling to control variance.</p>
+          
+          <div class="model-score-box score-box">
+            <div class="score-label-above">
+              <span>ROC-AUC</span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num" id="rf-auc-val">90.4</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" id="rf-auc-bar" style="width: 90.4%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-badges-row">
+            <div class="metric-badge-box"><div class="metric-badge-val" id="rf-acc-val">84.5%</div><div class="metric-badge-lbl">Accuracy</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="rf-f1-val">91.6%</div><div class="metric-badge-lbl">F1</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="rf-rec-val">100.0%</div><div class="metric-badge-lbl">Recall</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="rf-prec-val">84.5%</div><div class="metric-badge-lbl">Precision</div></div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Confusion Matrix & Specs</summary>
+            <table class="cm-table">
+              <tr><th colspan="2">Actual vs Pred</th><th>Neg (0)</th><th>Pos (1)</th></tr>
+              <tr><th rowspan="2">Act</th><th>Neg</th><td class="cm-correct" id="cm-rf-tn">16</td><td class="cm-incorrect" id="cm-rf-fp">1239</td></tr>
+              <tr><th>Pos</th><td class="cm-incorrect" id="cm-rf-fn">0</td><td class="cm-correct" id="cm-rf-tp">6745</td></tr>
+            </table>
+            <table class="tech-specs-table" style="margin-top: 0.5rem;">
+              <tr><td>Family</td><td>Bootstrap Bagging Ensemble</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF</td></tr>
+              <tr><td>Training Time</td><td id="rf-time-stat">0.69 s</td></tr>
+              <tr><td>Latency</td><td id="rf-lat-stat">0.119 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 6. KNN -->
+        <div class="liquid-card model-card model-card-simple" id="card-knn">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">📍</div>
+            <h3 class="model-card-name">K-Nearest Neighbors</h3>
+          </div>
+          <p class="model-one-liner">Spatial instance search using Cosine distance metric with $K=7$ in TF-IDF vector space.</p>
+          
+          <div class="model-score-box score-box">
+            <div class="score-label-above">
+              <span>ROC-AUC</span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num" id="knn-auc-val">77.9</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" id="knn-auc-bar" style="width: 77.9%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-badges-row">
+            <div class="metric-badge-box"><div class="metric-badge-val" id="knn-acc-val">86.6%</div><div class="metric-badge-lbl">Accuracy</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="knn-f1-val">92.5%</div><div class="metric-badge-lbl">F1</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="knn-rec-val">98.5%</div><div class="metric-badge-lbl">Recall</div></div>
+            <div class="metric-badge-box"><div class="metric-badge-val" id="knn-prec-val">87.2%</div><div class="metric-badge-lbl">Precision</div></div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Confusion Matrix & Specs</summary>
+            <table class="cm-table">
+              <tr><th colspan="2">Actual vs Pred</th><th>Neg (0)</th><th>Pos (1)</th></tr>
+              <tr><th rowspan="2">Act</th><th>Neg</th><td class="cm-correct" id="cm-knn-tn">284</td><td class="cm-incorrect" id="cm-knn-fp">971</td></tr>
+              <tr><th>Pos</th><td class="cm-incorrect" id="cm-knn-fn">104</td><td class="cm-correct" id="cm-knn-tp">6641</td></tr>
+            </table>
+            <table class="tech-specs-table" style="margin-top: 0.5rem;">
+              <tr><td>Family</td><td>Instance-Based Memory Lookup</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF Cosine Distance</td></tr>
+              <tr><td>Training Time</td><td id="knn-time-stat">0.01 s</td></tr>
+              <tr><td>Latency</td><td id="knn-lat-stat">0.350 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- 4-Stage Visual Pipeline -->
+      <div style="margin-top: 3.5rem;">
+        <div class="section-header-center">
+          <h2 class="section-heading">How raw text flows through our architecture</h2>
+          <p class="section-subheading">From 568,454 Stanford SNAP raw reviews to calibrated ensemble predictions:</p>
+        </div>
+
+        <div class="how-it-works-grid">
+          <div class="liquid-card step-card">
+            <div class="step-icon-bubble">📦</div>
+            <div class="step-num-badge">Stage 1</div>
+            <h3 class="step-title">Raw Dataset</h3>
+            <p class="step-desc">Ingests 568,454 authentic customer reviews spanning 10+ years across 74,258 gourmet food products.</p>
+          </div>
+
+          <div class="liquid-card step-card">
+            <div class="step-icon-bubble">🧹</div>
+            <div class="step-num-badge">Stage 2</div>
+            <h3 class="step-title">Preprocessing</h3>
+            <p class="step-desc">Deduplication removes 174k cross-variant reviews, strips HTML, preserves negations, and stems tokens.</p>
+          </div>
+
+          <div class="liquid-card step-card">
+            <div class="step-icon-bubble">🔢</div>
+            <div class="step-num-badge">Stage 3</div>
+            <h3 class="step-title">Feature Extraction</h3>
+            <p class="step-desc">Converts cleaned tokens into 10,000 sublinear TF-IDF n-grams and CountVectorizer Bag-of-Words matrices.</p>
+          </div>
+
+          <div class="liquid-card step-card">
+            <div class="step-icon-bubble">👑</div>
+            <div class="step-num-badge">Stage 4</div>
+            <h3 class="step-title">Ensemble Verdict</h3>
+            <p class="step-desc">All 6 models calculate smooth probabilities; the mean consensus <code>P_ens = 1/6 ∑ P_i</code> yields our final prediction.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-brand">FineFoods AI</span>
+        <span class="footer-sub">&copy; 2026 Stanford SNAP Amazon Reviews Machine Learning Arena</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Theme toggle
+    const toggle = document.getElementById('ios-theme-toggle');
+    const saved = localStorage.getItem('finefoods_theme') || 'light';
+    document.documentElement.setAttribute('data-theme', saved);
+    if (toggle) {
+      toggle.checked = (saved === 'dark');
+      toggle.addEventListener('change', () => {
+        const next = toggle.checked ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('finefoods_theme', next);
+      });
+    }
+
+    // Dynamic metrics loading from /api/evaluation and /api/stats
+    document.addEventListener('DOMContentLoaded', () => {
+      loadLiveEvaluation();
+      loadDatasetStats();
+      initModeToggle();
+    });
+
+    let liveEvaluationData = null;
+    let historicalBenchmarkData = null;
+
+    async function loadDatasetStats() {
+      try {
+        const res = await fetch('/api/stats');
+        const json = await res.json();
+        if (json.status === 'success' && json.data) {
+          const d = json.data;
+          const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = Number(val).toLocaleString(); };
+          setT('stat-total-raw', d.original_record_count || d.total_original_reviews);
+          setT('stat-clean-reviews', d.cleaned_record_count || d.cleaned_reviews);
+          if (d.sentiment_distribution) {
+            setT('stat-pos-reviews', d.sentiment_distribution.positive);
+            setT('stat-neg-reviews', d.sentiment_distribution.negative);
+            setT('stat-neutral-reviews', d.sentiment_distribution.neutral);
+          }
+        }
+      } catch (e) {
+        console.warn('Failed to load stats:', e);
+      }
+    }
+
+    async function loadLiveEvaluation() {
+      try {
+        const res = await fetch('/api/evaluation');
+        const json = await res.json();
+        if (json.status === 'success' && json.data) {
+          liveEvaluationData = json.data;
+          renderEvaluationMetrics(json.data.models);
+        }
+      } catch (e) {
+        console.warn('Failed to load evaluation metrics:', e);
+      }
+    }
+
+    function renderEvaluationMetrics(models) {
+      if (!models) return;
+
+      const colors = {
+        ensemble_avg: '#8b5cf6',
+        logistic_regression: '#059669',
+        svm: '#2563eb',
+        xgboost: '#f59e0b',
+        naive_bayes: '#06b6d4',
+        random_forest: '#10b981',
+        knn: '#ec4899'
+      };
+
+      // Populate Leaderboard Chart
+      const chartContainer = document.getElementById('leaderboard-chart-container');
+      if (chartContainer) {
+        chartContainer.innerHTML = '';
+        const sortedEntries = Object.entries(models).sort((a, b) => b[1].roc_auc - a[1].roc_auc);
+        sortedEntries.forEach(([key, m]) => {
+          const row = document.createElement('div');
+          row.className = 'bench-chart-row';
+          const fillWidth = Math.min(100, Math.max(10, m.roc_auc));
+          const color = colors[key] || '#3b82f6';
+          row.innerHTML = `
+            <div class="bench-chart-name">${m.name}</div>
+            <div class="bench-chart-track">
+              <div class="bench-chart-fill" style="width: ${fillWidth}%; background: ${color};">
+                ${m.roc_auc}% AUC • ${m.accuracy}% Acc
+              </div>
+            </div>
+          `;
+          chartContainer.appendChild(row);
+        });
+      }
+
+      // Populate Individual Model Cards
+      const populateCard = (prefix, m) => {
+        if (!m) return;
+        const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+        setEl(`${prefix}-auc-val`, m.roc_auc);
+        setEl(`${prefix}-acc-val`, `${m.accuracy}%`);
+        setEl(`${prefix}-f1-val`, `${m.f1_score}%`);
+        setEl(`${prefix}-rec-val`, `${m.recall}%`);
+        setEl(`${prefix}-prec-val`, `${m.precision}%`);
+        setEl(`${prefix}-time-stat`, `${m.training_time_sec} s`);
+        setEl(`${prefix}-lat-stat`, `${m.inference_latency_ms} ms`);
+
+        const bar = document.getElementById(`${prefix}-auc-bar`);
+        if (bar) bar.style.width = `${m.roc_auc}%`;
+
+        if (m.confusion_matrix && m.confusion_matrix.length === 2) {
+          setEl(`cm-${prefix}-tn`, `${m.confusion_matrix[0][0]}`);
+          setEl(`cm-${prefix}-fp`, `${m.confusion_matrix[0][1]}`);
+          setEl(`cm-${prefix}-fn`, `${m.confusion_matrix[1][0]}`);
+          setEl(`cm-${prefix}-tp`, `${m.confusion_matrix[1][1]}`);
+        }
+      };
+
+      populateCard('ens', models.ensemble_avg);
+      populateCard('lr', models.logistic_regression);
+      populateCard('nb', models.naive_bayes);
+      populateCard('svm', models.svm);
+      populateCard('xgb', models.xgboost);
+      populateCard('rf', models.random_forest);
+      populateCard('knn', models.knn);
+
+      if (models.ensemble_avg && models.ensemble_avg.average_agreement_pct) {
+        const el = document.getElementById('ens-agree-stat');
+        if (el) el.textContent = `${models.ensemble_avg.average_agreement_pct}% consensus on test data`;
+      }
+    }
+
+    function initModeToggle() {
+      const btnMeasured = document.getElementById('btn-show-measured');
+      const btnHistorical = document.getElementById('btn-show-historical');
+
+      if (btnMeasured && btnHistorical) {
+        btnMeasured.addEventListener('click', () => {
+          btnMeasured.classList.add('active');
+          btnHistorical.classList.remove('active');
+          if (liveEvaluationData) {
+            renderEvaluationMetrics(liveEvaluationData.models);
+          }
+        });
+
+        btnHistorical.addEventListener('click', async () => {
+          btnHistorical.classList.add('active');
+          btnMeasured.classList.remove('active');
+          if (!historicalBenchmarkData) {
+            try {
+              const res = await fetch('/api/benchmark');
+              const json = await res.json();
+              if (json.status === 'success') {
+                historicalBenchmarkData = json;
+              }
+            } catch (e) {}
+          }
+          if (historicalBenchmarkData) {
+            renderHistoricalLeaderboard(historicalBenchmarkData.results);
+          }
+        });
+      }
+    }
+
+    function renderHistoricalLeaderboard(results) {
+      const chartContainer = document.getElementById('leaderboard-chart-container');
+      if (!chartContainer || !results) return;
+      chartContainer.innerHTML = '';
+      
+      const top6 = results.slice(0, 7);
+      top6.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'bench-chart-row';
+        row.innerHTML = `
+          <div class="bench-chart-name">${item.model_family} (${item.vectorizer})</div>
+          <div class="bench-chart-track">
+            <div class="bench-chart-fill" style="width: ${item.test_auc}%; background: #3b82f6;">
+              ${item.test_auc}% AUC • ${item.best_param}
+            </div>
+          </div>
+        `;
+        chartContainer.appendChild(row);
+      });
+    }
+  </script>
+</body>
+</html>

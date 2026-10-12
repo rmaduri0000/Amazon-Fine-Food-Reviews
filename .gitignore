@@ -1,0 +1,21 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environments
+venv/
+env/
+ENV/
+.env
+
+# Large dataset files (>100MB exceeds GitHub limits)
+data/Reviews.csv
+data/processed_reviews.csv
+data/finefoods.txt.gz
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini

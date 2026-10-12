@@ -1,0 +1,1604 @@
+[
+  {
+    "id": "nb2_tsne_1",
+    "notebook_key": "nb2_tsne",
+    "notebook_title": "t-SNE Dimensionality Reduction",
+    "filename": "nb2_tsne_img_01.png",
+    "heading": "Standardizing the Data",
+    "caption": "Standardizing the Data - t-SNE 2D Projection",
+    "url": "/static/notebook_assets/nb2_tsne_img_01.png"
+  },
+  {
+    "id": "nb2_tsne_2",
+    "notebook_key": "nb2_tsne",
+    "notebook_title": "t-SNE Dimensionality Reduction",
+    "filename": "nb2_tsne_img_02.png",
+    "heading": "Standardizing the data",
+    "caption": "Standardizing the data - t-SNE 2D Projection",
+    "url": "/static/notebook_assets/nb2_tsne_img_02.png"
+  },
+  {
+    "id": "nb2_tsne_3",
+    "notebook_key": "nb2_tsne",
+    "notebook_title": "t-SNE Dimensionality Reduction",
+    "filename": "nb2_tsne_img_03.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF - t-SNE 2D Projection",
+    "url": "/static/notebook_assets/nb2_tsne_img_03.png"
+  },
+  {
+    "id": "nb2_tsne_4",
+    "notebook_key": "nb2_tsne",
+    "notebook_title": "t-SNE Dimensionality Reduction",
+    "filename": "nb2_tsne_img_04.png",
+    "heading": "Average word2Vec",
+    "caption": "Average word2Vec - t-SNE 2D Projection",
+    "url": "/static/notebook_assets/nb2_tsne_img_04.png"
+  },
+  {
+    "id": "nb2_tsne_5",
+    "notebook_key": "nb2_tsne",
+    "notebook_title": "t-SNE Dimensionality Reduction",
+    "filename": "nb2_tsne_img_05.png",
+    "heading": "TF-IDF Weighted Word2Vec",
+    "caption": "TF-IDF Weighted Word2Vec - t-SNE 2D Projection",
+    "url": "/static/notebook_assets/nb2_tsne_img_05.png"
+  },
+  {
+    "id": "nb3_knn_1",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_01.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb3_knn_img_01.png"
+  },
+  {
+    "id": "nb3_knn_2",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_02.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb3_knn_img_02.png"
+  },
+  {
+    "id": "nb3_knn_3",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_03.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in BoW",
+    "caption": "KNN with simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb3_knn_img_03.png"
+  },
+  {
+    "id": "nb3_knn_4",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_04.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in BoW",
+    "caption": "KNN with simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb3_knn_img_04.png"
+  },
+  {
+    "id": "nb3_knn_5",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_05.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_05.png"
+  },
+  {
+    "id": "nb3_knn_6",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_06.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_06.png"
+  },
+  {
+    "id": "nb3_knn_7",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_07.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_07.png"
+  },
+  {
+    "id": "nb3_knn_8",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_08.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_08.png"
+  },
+  {
+    "id": "nb3_knn_9",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_09.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb3_knn_img_09.png"
+  },
+  {
+    "id": "nb3_knn_10",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_10.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb3_knn_img_10.png"
+  },
+  {
+    "id": "nb3_knn_11",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_11.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "url": "/static/notebook_assets/nb3_knn_img_11.png"
+  },
+  {
+    "id": "nb3_knn_12",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_12.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "url": "/static/notebook_assets/nb3_knn_img_12.png"
+  },
+  {
+    "id": "nb3_knn_13",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_13.png",
+    "heading": "TF-IDF Weighted Word2Vec",
+    "caption": "TF-IDF Weighted Word2Vec",
+    "url": "/static/notebook_assets/nb3_knn_img_13.png"
+  },
+  {
+    "id": "nb3_knn_14",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_14.png",
+    "heading": "TF-IDF Weighted Word2Vec",
+    "caption": "TF-IDF Weighted Word2Vec",
+    "url": "/static/notebook_assets/nb3_knn_img_14.png"
+  },
+  {
+    "id": "nb3_knn_15",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_15.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF W2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF W2V",
+    "url": "/static/notebook_assets/nb3_knn_img_15.png"
+  },
+  {
+    "id": "nb3_knn_16",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_16.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF W2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF W2V",
+    "url": "/static/notebook_assets/nb3_knn_img_16.png"
+  },
+  {
+    "id": "nb3_knn_17",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_17.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb3_knn_img_17.png"
+  },
+  {
+    "id": "nb3_knn_18",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_18.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb3_knn_img_18.png"
+  },
+  {
+    "id": "nb3_knn_19",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_19.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb3_knn_img_19.png"
+  },
+  {
+    "id": "nb3_knn_20",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_20.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in BoW",
+    "caption": "KNN with simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb3_knn_img_20.png"
+  },
+  {
+    "id": "nb3_knn_21",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_21.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in BoW",
+    "caption": "KNN with simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb3_knn_img_21.png"
+  },
+  {
+    "id": "nb3_knn_22",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_22.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_22.png"
+  },
+  {
+    "id": "nb3_knn_23",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_23.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_23.png"
+  },
+  {
+    "id": "nb3_knn_24",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_24.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_24.png"
+  },
+  {
+    "id": "nb3_knn_25",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_25.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_25.png"
+  },
+  {
+    "id": "nb3_knn_26",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_26.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb3_knn_img_26.png"
+  },
+  {
+    "id": "nb3_knn_27",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_27.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb3_knn_img_27.png"
+  },
+  {
+    "id": "nb3_knn_28",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_28.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb3_knn_img_28.png"
+  },
+  {
+    "id": "nb3_knn_29",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_29.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb3_knn_img_29.png"
+  },
+  {
+    "id": "nb3_knn_30",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_30.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "url": "/static/notebook_assets/nb3_knn_img_30.png"
+  },
+  {
+    "id": "nb3_knn_31",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_31.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "url": "/static/notebook_assets/nb3_knn_img_31.png"
+  },
+  {
+    "id": "nb3_knn_32",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_32.png",
+    "heading": "TF-IDF Weighted Word2Vec",
+    "caption": "TF-IDF Weighted Word2Vec",
+    "url": "/static/notebook_assets/nb3_knn_img_32.png"
+  },
+  {
+    "id": "nb3_knn_33",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_33.png",
+    "heading": "TF-IDF Weighted Word2Vec",
+    "caption": "TF-IDF Weighted Word2Vec",
+    "url": "/static/notebook_assets/nb3_knn_img_33.png"
+  },
+  {
+    "id": "nb3_knn_34",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_34.png",
+    "heading": "TF-IDF Weighted Word2Vec",
+    "caption": "TF-IDF Weighted Word2Vec",
+    "url": "/static/notebook_assets/nb3_knn_img_34.png"
+  },
+  {
+    "id": "nb3_knn_35",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_35.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "url": "/static/notebook_assets/nb3_knn_img_35.png"
+  },
+  {
+    "id": "nb3_knn_36",
+    "notebook_key": "nb3_knn",
+    "notebook_title": "K-Nearest Neighbors",
+    "filename": "nb3_knn_img_36.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "caption": "KNN with simple CV Over the unseen or Test data in AvgW2V",
+    "url": "/static/notebook_assets/nb3_knn_img_36.png"
+  },
+  {
+    "id": "nb4_nb_1",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_01.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb4_nb_img_01.png"
+  },
+  {
+    "id": "nb4_nb_2",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_02.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb4_nb_img_02.png"
+  },
+  {
+    "id": "nb4_nb_3",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_03.png",
+    "heading": "NB simple CV Over the unseen or Test data in BoW",
+    "caption": "NB simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb4_nb_img_03.png"
+  },
+  {
+    "id": "nb4_nb_4",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_04.png",
+    "heading": "NB simple CV Over the unseen or Test data in BoW",
+    "caption": "NB simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb4_nb_img_04.png"
+  },
+  {
+    "id": "nb4_nb_5",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_05.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb4_nb_img_05.png"
+  },
+  {
+    "id": "nb4_nb_6",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_06.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb4_nb_img_06.png"
+  },
+  {
+    "id": "nb4_nb_7",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_07.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb4_nb_img_07.png"
+  },
+  {
+    "id": "nb4_nb_8",
+    "notebook_key": "nb4_nb",
+    "notebook_title": "Naive Bayes",
+    "filename": "nb4_nb_img_08.png",
+    "heading": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "caption": "KNN with simple CV Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb4_nb_img_08.png"
+  },
+  {
+    "id": "nb5_lr_1",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_01.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb5_lr_img_01.png"
+  },
+  {
+    "id": "nb5_lr_2",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_02.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb5_lr_img_02.png"
+  },
+  {
+    "id": "nb5_lr_3",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_03.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb5_lr_img_03.png"
+  },
+  {
+    "id": "nb5_lr_4",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_04.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb5_lr_img_04.png"
+  },
+  {
+    "id": "nb5_lr_5",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_05.png",
+    "heading": "LR simple CV Over the unseen or Test data in BoW",
+    "caption": "LR simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb5_lr_img_05.png"
+  },
+  {
+    "id": "nb5_lr_6",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_06.png",
+    "heading": "LR simple CV Over the unseen or Test data in BoW",
+    "caption": "LR simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb5_lr_img_06.png"
+  },
+  {
+    "id": "nb5_lr_7",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_07.png",
+    "heading": "LR simple CV Over the unseen or Test data in BoW",
+    "caption": "LR simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb5_lr_img_07.png"
+  },
+  {
+    "id": "nb5_lr_8",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_08.png",
+    "heading": "LR simple CV Over the unseen or Test data in BoW",
+    "caption": "LR simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb5_lr_img_08.png"
+  },
+  {
+    "id": "nb5_lr_9",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_09.png",
+    "heading": "Pertubation Test  on BoW",
+    "caption": "Pertubation Test  on BoW",
+    "url": "/static/notebook_assets/nb5_lr_img_09.png"
+  },
+  {
+    "id": "nb5_lr_10",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_10.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_10.png"
+  },
+  {
+    "id": "nb5_lr_11",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_11.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_11.png"
+  },
+  {
+    "id": "nb5_lr_12",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_12.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_12.png"
+  },
+  {
+    "id": "nb5_lr_13",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_13.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_13.png"
+  },
+  {
+    "id": "nb5_lr_14",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_14.png",
+    "heading": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "caption": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_14.png"
+  },
+  {
+    "id": "nb5_lr_15",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_15.png",
+    "heading": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "caption": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_15.png"
+  },
+  {
+    "id": "nb5_lr_16",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_16.png",
+    "heading": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "caption": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_16.png"
+  },
+  {
+    "id": "nb5_lr_17",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_17.png",
+    "heading": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "caption": "Logistic Regression Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb5_lr_img_17.png"
+  },
+  {
+    "id": "nb5_lr_18",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_18.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_18.png"
+  },
+  {
+    "id": "nb5_lr_19",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_19.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_19.png"
+  },
+  {
+    "id": "nb5_lr_20",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_20.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_20.png"
+  },
+  {
+    "id": "nb5_lr_21",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_21.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_21.png"
+  },
+  {
+    "id": "nb5_lr_22",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_22.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_22.png"
+  },
+  {
+    "id": "nb5_lr_23",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_23.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_23.png"
+  },
+  {
+    "id": "nb5_lr_24",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_24.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_24.png"
+  },
+  {
+    "id": "nb5_lr_25",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_25.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_25.png"
+  },
+  {
+    "id": "nb5_lr_26",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_26.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_26.png"
+  },
+  {
+    "id": "nb5_lr_27",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_27.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_27.png"
+  },
+  {
+    "id": "nb5_lr_28",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_28.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_28.png"
+  },
+  {
+    "id": "nb5_lr_29",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_29.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_29.png"
+  },
+  {
+    "id": "nb5_lr_30",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_30.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_30.png"
+  },
+  {
+    "id": "nb5_lr_31",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_31.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_31.png"
+  },
+  {
+    "id": "nb5_lr_32",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_32.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_32.png"
+  },
+  {
+    "id": "nb5_lr_33",
+    "notebook_key": "nb5_lr",
+    "notebook_title": "Logistic Regression",
+    "filename": "nb5_lr_img_33.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb5_lr_img_33.png"
+  },
+  {
+    "id": "nb6_svm_1",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_01.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb6_svm_img_01.png"
+  },
+  {
+    "id": "nb6_svm_2",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_02.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb6_svm_img_02.png"
+  },
+  {
+    "id": "nb6_svm_3",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_03.png",
+    "heading": "LR simple CV Over the unseen or Test data in BoW",
+    "caption": "LR simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb6_svm_img_03.png"
+  },
+  {
+    "id": "nb6_svm_4",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_04.png",
+    "heading": "LR simple CV Over the unseen or Test data in BoW",
+    "caption": "LR simple CV Over the unseen or Test data in BoW",
+    "url": "/static/notebook_assets/nb6_svm_img_04.png"
+  },
+  {
+    "id": "nb6_svm_5",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_05.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_05.png"
+  },
+  {
+    "id": "nb6_svm_6",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_06.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_06.png"
+  },
+  {
+    "id": "nb6_svm_7",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_07.png",
+    "heading": "SVM Over the unseen or Test data in TF-IDF",
+    "caption": "SVM Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_07.png"
+  },
+  {
+    "id": "nb6_svm_8",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_08.png",
+    "heading": "SVM Over the unseen or Test data in TF-IDF",
+    "caption": "SVM Over the unseen or Test data in TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_08.png"
+  },
+  {
+    "id": "nb6_svm_9",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_09.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_09.png"
+  },
+  {
+    "id": "nb6_svm_10",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_10.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_10.png"
+  },
+  {
+    "id": "nb6_svm_11",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_11.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_11.png"
+  },
+  {
+    "id": "nb6_svm_12",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_12.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_12.png"
+  },
+  {
+    "id": "nb6_svm_13",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_13.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_13.png"
+  },
+  {
+    "id": "nb6_svm_14",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_14.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_14.png"
+  },
+  {
+    "id": "nb6_svm_15",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_15.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_15.png"
+  },
+  {
+    "id": "nb6_svm_16",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_16.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_16.png"
+  },
+  {
+    "id": "nb6_svm_17",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_17.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb6_svm_img_17.png"
+  },
+  {
+    "id": "nb6_svm_18",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_18.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb6_svm_img_18.png"
+  },
+  {
+    "id": "nb6_svm_19",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_19.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb6_svm_img_19.png"
+  },
+  {
+    "id": "nb6_svm_20",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_20.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb6_svm_img_20.png"
+  },
+  {
+    "id": "nb6_svm_21",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_21.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_21.png"
+  },
+  {
+    "id": "nb6_svm_22",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_22.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_22.png"
+  },
+  {
+    "id": "nb6_svm_23",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_23.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_23.png"
+  },
+  {
+    "id": "nb6_svm_24",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_24.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb6_svm_img_24.png"
+  },
+  {
+    "id": "nb6_svm_25",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_25.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_25.png"
+  },
+  {
+    "id": "nb6_svm_26",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_26.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_26.png"
+  },
+  {
+    "id": "nb6_svm_27",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_27.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_27.png"
+  },
+  {
+    "id": "nb6_svm_28",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_28.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_28.png"
+  },
+  {
+    "id": "nb6_svm_29",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_29.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_29.png"
+  },
+  {
+    "id": "nb6_svm_30",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_30.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_30.png"
+  },
+  {
+    "id": "nb6_svm_31",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_31.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_31.png"
+  },
+  {
+    "id": "nb6_svm_32",
+    "notebook_key": "nb6_svm",
+    "notebook_title": "Support Vector Machines",
+    "filename": "nb6_svm_img_32.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb6_svm_img_32.png"
+  },
+  {
+    "id": "nb7_dt_1",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_01.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb7_dt_img_01.png"
+  },
+  {
+    "id": "nb7_dt_2",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_02.png",
+    "heading": "Bag of Words (BoW)",
+    "caption": "Bag of Words (BoW)",
+    "url": "/static/notebook_assets/nb7_dt_img_02.png"
+  },
+  {
+    "id": "nb7_dt_3",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_03.png",
+    "heading": "Testing on Test data and Training in BoW",
+    "caption": "Testing on Test data and Training in BoW",
+    "url": "/static/notebook_assets/nb7_dt_img_03.png"
+  },
+  {
+    "id": "nb7_dt_4",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_04.png",
+    "heading": "Testing on Test data and Training in BoW",
+    "caption": "Testing on Test data and Training in BoW",
+    "url": "/static/notebook_assets/nb7_dt_img_04.png"
+  },
+  {
+    "id": "nb7_dt_5",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_05.png",
+    "heading": "Testing on Test data and Training in BoW",
+    "caption": "Testing on Test data and Training in BoW",
+    "url": "/static/notebook_assets/nb7_dt_img_05.png"
+  },
+  {
+    "id": "nb7_dt_6",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_06.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb7_dt_img_06.png"
+  },
+  {
+    "id": "nb7_dt_7",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_07.png",
+    "heading": "TF-IDF",
+    "caption": "TF-IDF",
+    "url": "/static/notebook_assets/nb7_dt_img_07.png"
+  },
+  {
+    "id": "nb7_dt_8",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_08.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF",
+    "caption": "Testing on Test data and Traing data in TF-IDF",
+    "url": "/static/notebook_assets/nb7_dt_img_08.png"
+  },
+  {
+    "id": "nb7_dt_9",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_09.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF",
+    "caption": "Testing on Test data and Traing data in TF-IDF",
+    "url": "/static/notebook_assets/nb7_dt_img_09.png"
+  },
+  {
+    "id": "nb7_dt_10",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_10.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF",
+    "caption": "Testing on Test data and Traing data in TF-IDF",
+    "url": "/static/notebook_assets/nb7_dt_img_10.png"
+  },
+  {
+    "id": "nb7_dt_11",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_11.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_11.png"
+  },
+  {
+    "id": "nb7_dt_12",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_12.png",
+    "heading": "Avg W2V",
+    "caption": "Avg W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_12.png"
+  },
+  {
+    "id": "nb7_dt_13",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_13.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V",
+    "caption": "Testing on Test data and Traing data in Avg-W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_13.png"
+  },
+  {
+    "id": "nb7_dt_14",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_14.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V",
+    "caption": "Testing on Test data and Traing data in Avg-W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_14.png"
+  },
+  {
+    "id": "nb7_dt_15",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_15.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V",
+    "caption": "Testing on Test data and Traing data in Avg-W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_15.png"
+  },
+  {
+    "id": "nb7_dt_16",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_16.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_16.png"
+  },
+  {
+    "id": "nb7_dt_17",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_17.png",
+    "heading": "TF-IDF Weighted W2V",
+    "caption": "TF-IDF Weighted W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_17.png"
+  },
+  {
+    "id": "nb7_dt_18",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_18.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_18.png"
+  },
+  {
+    "id": "nb7_dt_19",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_19.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_19.png"
+  },
+  {
+    "id": "nb7_dt_20",
+    "notebook_key": "nb7_dt",
+    "notebook_title": "Decision Trees",
+    "filename": "nb7_dt_img_20.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V",
+    "url": "/static/notebook_assets/nb7_dt_img_20.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_1",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_01.png",
+    "heading": "Training Model on BoW for Random Forest",
+    "caption": "Training Model on BoW for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_01.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_2",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_02.png",
+    "heading": "Training Model on BoW for Random Forest",
+    "caption": "Training Model on BoW for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_02.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_3",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_03.png",
+    "heading": "Testing on Test data and Training on BoW for Random Forest",
+    "caption": "Testing on Test data and Training on BoW for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_03.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_4",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_04.png",
+    "heading": "Testing on Test data and Training on BoW for Random Forest",
+    "caption": "Testing on Test data and Training on BoW for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_04.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_5",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_05.png",
+    "heading": "Testing on Test data and Training on BoW for Random Forest",
+    "caption": "Testing on Test data and Training on BoW for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_05.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_6",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_06.png",
+    "heading": "Training Model on BoW for XGBoost",
+    "caption": "Training Model on BoW for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_06.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_7",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_07.png",
+    "heading": "Training Model on BoW for XGBoost",
+    "caption": "Training Model on BoW for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_07.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_8",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_08.png",
+    "heading": "Testing on Test data and Training on BoW for XGBoost",
+    "caption": "Testing on Test data and Training on BoW for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_08.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_9",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_09.png",
+    "heading": "Testing on Test data and Training on BoW for XGBoost",
+    "caption": "Testing on Test data and Training on BoW for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_09.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_10",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_10.png",
+    "heading": "Testing on Test data and Training on BoW for XGBoost",
+    "caption": "Testing on Test data and Training on BoW for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_10.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_11",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_11.png",
+    "heading": "Top 20 Features in BoW for Random Forest",
+    "caption": "Top 20 Features in BoW for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_11.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_12",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_12.png",
+    "heading": "Top 20 Features in BoW for XGBoost",
+    "caption": "Top 20 Features in BoW for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_12.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_13",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_13.png",
+    "heading": "Training Model on TF-IDF for Random Forest",
+    "caption": "Training Model on TF-IDF for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_13.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_14",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_14.png",
+    "heading": "Training Model on TF-IDF for Random Forest",
+    "caption": "Training Model on TF-IDF for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_14.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_15",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_15.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF for Random Forest",
+    "caption": "Testing on Test data and Traing data in TF-IDF for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_15.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_16",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_16.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF for Random Forest",
+    "caption": "Testing on Test data and Traing data in TF-IDF for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_16.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_17",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_17.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF for Random Forest",
+    "caption": "Testing on Test data and Traing data in TF-IDF for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_17.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_18",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_18.png",
+    "heading": "Training Model on TF-IDF for XGBoost",
+    "caption": "Training Model on TF-IDF for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_18.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_19",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_19.png",
+    "heading": "Training Model on TF-IDF for XGBoost",
+    "caption": "Training Model on TF-IDF for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_19.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_20",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_20.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF for XGBoost",
+    "caption": "Testing on Test data and Traing data in TF-IDF for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_20.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_21",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_21.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF for XGBoost",
+    "caption": "Testing on Test data and Traing data in TF-IDF for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_21.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_22",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_22.png",
+    "heading": "Testing on Test data and Traing data in TF-IDF for XGBoost",
+    "caption": "Testing on Test data and Traing data in TF-IDF for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_22.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_23",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_23.png",
+    "heading": "Top 20 Features in TF-IDF for Random Forest",
+    "caption": "Top 20 Features in TF-IDF for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_23.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_24",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_24.png",
+    "heading": "Top 20 Features in TF-IDF for XGBoost",
+    "caption": "Top 20 Features in TF-IDF for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_24.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_25",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_25.png",
+    "heading": "Training Model on Avg-W2V for Random Forest",
+    "caption": "Training Model on Avg-W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_25.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_26",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_26.png",
+    "heading": "Training Model on Avg-W2V for Random Forest",
+    "caption": "Training Model on Avg-W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_26.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_27",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_27.png",
+    "heading": "Training Model on Avg-W2V for XGBoost",
+    "caption": "Training Model on Avg-W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_27.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_28",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_28.png",
+    "heading": "Training Model on Avg-W2V for XGBoost",
+    "caption": "Training Model on Avg-W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_28.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_29",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_29.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V for Random Forest",
+    "caption": "Testing on Test data and Traing data in Avg-W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_29.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_30",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_30.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V for Random Forest",
+    "caption": "Testing on Test data and Traing data in Avg-W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_30.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_31",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_31.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V for Random Forest",
+    "caption": "Testing on Test data and Traing data in Avg-W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_31.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_32",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_32.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V for XGBoost",
+    "caption": "Testing on Test data and Traing data in Avg-W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_32.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_33",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_33.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V for XGBoost",
+    "caption": "Testing on Test data and Traing data in Avg-W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_33.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_34",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_34.png",
+    "heading": "Testing on Test data and Traing data in Avg-W2V for XGBoost",
+    "caption": "Testing on Test data and Traing data in Avg-W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_34.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_35",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_35.png",
+    "heading": "Training Model on TFIDF-W2V for Random Forest",
+    "caption": "Training Model on TFIDF-W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_35.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_36",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_36.png",
+    "heading": "Training Model on TFIDF-W2V for Random Forest",
+    "caption": "Training Model on TFIDF-W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_36.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_37",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_37.png",
+    "heading": "Training Model on TFIDF-W2V for XGBoost",
+    "caption": "Training Model on TFIDF-W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_37.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_38",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_38.png",
+    "heading": "Training Model on TFIDF-W2V for XGBoost",
+    "caption": "Training Model on TFIDF-W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_38.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_39",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_39.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V for Random Forest",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_39.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_40",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_40.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V for Random Forest",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_40.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_41",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_41.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V for Random Forest",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V for Random Forest",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_41.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_42",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_42.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V for XGBoost",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_42.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_43",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_43.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V for XGBoost",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_43.png"
+  },
+  {
+    "id": "nb8_rf_gbdt_44",
+    "notebook_key": "nb8_rf_gbdt",
+    "notebook_title": "Random Forest & GBDT",
+    "filename": "nb8_rf_gbdt_img_44.png",
+    "heading": "Testing on Test data and Training data in TF-IDF W2V for XGBoost",
+    "caption": "Testing on Test data and Training data in TF-IDF W2V for XGBoost",
+    "url": "/static/notebook_assets/nb8_rf_gbdt_img_44.png"
+  }
+]

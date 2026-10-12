@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FineFoods AI - Batch & Product Analytics</title>
+  <meta name="description" content="Check many reviews at once. Upload a CSV or paste customer reviews to evaluate product satisfaction, spot quality defect alerts, and export sentiment predictions.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Soft Ambient Gradient Blobs (Liquid Glass Reflection) -->
+  <div class="liquid-bg">
+    <div class="liquid-orb orb-pink"></div>
+    <div class="liquid-orb orb-blue"></div>
+    <div class="liquid-orb orb-purple"></div>
+  </div>
+
+  <div class="site-wrapper">
+
+    <!-- Floating Pill-Shaped Navbar -->
+    <div class="navbar-pill-wrapper">
+      <header class="navbar-pill">
+        
+        <!-- Brand Link -->
+        <a href="/" class="brand-link">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="brand-title">FineFoods<span class="brand-ai-pill">AI</span></span>
+        </a>
+
+        <!-- Center Nav Links -->
+        <nav class="nav-links">
+          <a href="/" class="nav-link">Live Studio</a>
+          <a href="/batch" class="nav-link active">Batch Check</a>
+          <a href="/benchmarks" class="nav-link">Which model is best?</a>
+        </nav>
+
+        <!-- Right Actions: Dark Mode Switch + 1 Main CTA -->
+        <div class="nav-actions">
+          <label class="ios-switch" title="Toggle Light / Dark Mode">
+            <input type="checkbox" id="ios-theme-toggle" aria-label="Toggle Dark Mode">
+            <span class="ios-switch-slider">
+              <span class="ios-switch-knob">🌙</span>
+            </span>
+          </label>
+
+          <a href="/" class="btn-ios-primary">
+            <span>Check One Review</span>
+          </a>
+        </div>
+
+      </header>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="section-container">
+      
+      <div class="section-header-center">
+        <div class="hero-pill-badge">
+          <span class="pulse-dot"></span>
+          <span>Catalog & Quality Health Analytics</span>
+        </div>
+        <h1 class="section-heading">Batch and Product Health Analytics</h1>
+        <p class="section-subheading">
+          Analyze customer reviews in bulk, monitor product satisfaction metrics, set defect alert thresholds, and export sentiment predictions.
+        </p>
+      </div>
+
+      <!-- Sample Product Presets (Distinguished as QA Demo Groups) -->
+      <div style="margin-bottom: 2rem; text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <span class="presets-label">Load QA Demo Group:</span>
+          <span class="tag-pill" style="font-size: 0.7rem; background: rgba(59, 130, 246, 0.12); color: #2563eb;">Demo Preset</span>
+        </div>
+        <div class="presets-chips-row" style="justify-content: center; margin-bottom: 0;">
+          <button class="preset-chip-btn" id="btn-batch-coffee">☕ Colombian Roast Coffee (5 Reviews)</button>
+          <button class="preset-chip-btn" id="btn-batch-chips">🥨 Kettle Chips (5 Mixed Reviews)</button>
+          <button class="preset-chip-btn" id="btn-batch-tea">🍵 Organic Matcha Tea (5 Reviews)</button>
+          <button class="preset-chip-btn" id="btn-batch-pet">🐕 Dog Food (Problem Defect Reviews)</button>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+          * Demo groups illustrate quality monitoring workflows. To evaluate actual SNAP catalog products, upload a CSV or paste your own reviews.
+        </p>
+      </div>
+
+      <!-- Main Batch Glass Card -->
+      <div class="liquid-card analyzer-card">
+        
+        <!-- Tab selector: Paste text vs CSV file upload -->
+        <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+          <button class="segment-btn active" id="tab-mode-paste" style="padding: 0.5rem 1rem; font-weight: 700;">
+            ✏️ Paste Reviews
+          </button>
+          <button class="segment-btn" id="tab-mode-upload" style="padding: 0.5rem 1rem; font-weight: 700;">
+            📁 Upload CSV File
+          </button>
+        </div>
+
+        <!-- 1. Paste Mode Input -->
+        <div id="pane-paste-mode">
+          <div class="input-header">
+            <label for="batch-textarea-main" class="input-label">Customer reviews (one review per line)</label>
+            <span class="char-counter" id="batch-reviews-counter">0 reviews loaded</span>
+          </div>
+
+          <textarea 
+            id="batch-textarea-main" 
+            rows="6" 
+            placeholder="Paste multiple reviews here, one per line:
+Review 1: High quality coffee beans, rich aroma and fresh nutty notes!
+Review 2: Completely stale and expired. Bag arrived torn open and smelled like cardboard.
+Review 3: Great flavor, smooth texture and quick delivery."
+            class="liquid-textarea"
+          ></textarea>
+        </div>
+
+        <!-- 2. CSV File Upload Mode -->
+        <div id="pane-upload-mode" style="display: none;">
+          <div class="upload-dropzone" id="csv-dropzone" style="border: 2px dashed var(--border-glass); border-radius: 16px; padding: 2.5rem 1.5rem; text-align: center; background: rgba(255, 255, 255, 0.03); cursor: pointer; transition: all 0.2s;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📄</div>
+            <h4 style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Click to upload or drag & drop CSV file</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Supports standard Amazon Fine Food Reviews CSV (looks for Text, Summary, or review column)</p>
+            <input type="file" id="batch-file-input" accept=".csv" style="display: none;">
+            <button type="button" class="btn-ios-secondary" id="btn-browse-csv">Browse Files</button>
+            <div id="upload-file-status" style="margin-top: 1rem; font-size: 0.85rem; font-weight: 600; color: #059669; display: none;"></div>
+          </div>
+        </div>
+
+        <!-- Controls Bar with Model and Configurable Defect Threshold -->
+        <div class="controls-bar" style="flex-wrap: wrap; gap: 1rem; margin-top: 1.25rem;">
+          
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label for="batch-model-select" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Model:</label>
+            <select id="batch-model-select" class="liquid-select">
+              <option value="ensemble_avg" selected>All 6 models combined (average)</option>
+              <option value="logistic_regression">Logistic Regression</option>
+              <option value="naive_bayes">Naive Bayes</option>
+              <option value="svm">Support Vector Machine (SVM)</option>
+              <option value="xgboost">XGBoost</option>
+              <option value="random_forest">Random Forest</option>
+              <option value="knn">K-Nearest Neighbors (KNN)</option>
+            </select>
+          </div>
+
+          <!-- Configurable Defect Threshold -->
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label for="batch-threshold-input" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+              Defect Alert Threshold:
+            </label>
+            <input 
+              type="number" 
+              id="batch-threshold-input" 
+              min="5" 
+              max="60" 
+              value="25" 
+              style="width: 60px; padding: 0.35rem 0.5rem; border-radius: 8px; border: 1px solid var(--border-glass); background: var(--bg-card); color: var(--text-primary); font-weight: 700; text-align: center;"
+            >
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">% Unhappy</span>
+          </div>
+
+          <div style="margin-left: auto; display: flex; gap: 0.5rem;">
+            <button id="btn-clear-batch" class="btn-ios-secondary" title="Clear reviews">
+              <span>Clear</span>
+            </button>
+            <button id="btn-run-batch" class="btn-ios-primary">
+              <span class="btn-text">Check All Reviews</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Batch Results Area -->
+        <div id="batch-results-area" style="display: none; margin-top: 2rem;">
+          
+          <!-- Satisfaction Health Banner -->
+          <div class="sentiment-banner" id="batch-health-banner">
+            <div class="banner-left">
+              <div class="sentiment-emoji" id="batch-health-emoji">📊</div>
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span class="banner-model-tag" id="batch-product-tag">Batch Satisfaction Health</span>
+                  <span class="tag-pill" id="batch-sample-pill" style="display: none; font-size: 0.68rem; background: rgba(245, 158, 11, 0.15); color: #d97706;">
+                    ⚠️ Preliminary Result (Small Sample N &lt; 10)
+                  </span>
+                </div>
+                <h3 class="banner-verdict" id="batch-health-verdict">Mostly happy (80%)</h3>
+                <p id="batch-alert-message" style="font-size: 0.8rem; margin-top: 0.25rem; opacity: 0.9;"></p>
+              </div>
+            </div>
+
+            <div class="banner-right">
+              <div class="metric-block">
+                <span class="metric-val" id="batch-metric-total" style="color: var(--text-primary);">0</span>
+                <span class="metric-lbl">Total Reviews</span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-val" id="batch-metric-pos" style="color: #059669;">0</span>
+                <span class="metric-lbl">Happy (Pos)</span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-val" id="batch-metric-neg" style="color: #e11d48;">0</span>
+                <span class="metric-lbl">Unhappy (Neg)</span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-val" id="batch-metric-lat">0 ms</span>
+                <span class="metric-lbl">Avg Speed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sentiment Distribution Progress Gauge -->
+          <div class="liquid-card" style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(255, 255, 255, 0.04);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem; font-weight: 700; color: #059669;">
+                Happy Reviews: <strong id="chart-pos-pct">0%</strong> (<span id="chart-pos-count">0</span>)
+              </span>
+              <span style="font-size: 0.85rem; font-weight: 700; color: #e11d48;">
+                Unhappy Reviews: <strong id="chart-neg-pct">0%</strong> (<span id="chart-neg-count">0</span>)
+              </span>
+            </div>
+            <div class="prob-bar-container" style="height: 14px; position: relative;">
+              <div class="prob-fill-positive" id="batch-bar-pos" style="width: 50%;"></div>
+              <div class="prob-fill-negative" id="batch-bar-neg" style="width: 50%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem;">
+              <span>0%</span>
+              <span id="batch-threshold-marker">Alert Threshold: 25% Unhappy</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <!-- Breakdown Table Header and Controls -->
+          <div style="margin-top: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 0;">
+                  Review-by-review breakdown
+                </h4>
+                <span style="font-size: 0.8rem; color: var(--text-muted);" id="batch-table-count">Showing 0 reviews</span>
+              </div>
+
+              <!-- Filter and Export Actions -->
+              <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                <input 
+                  type="text" 
+                  id="batch-search-input" 
+                  placeholder="Search reviews..." 
+                  style="padding: 0.45rem 0.75rem; border-radius: 8px; border: 1px solid var(--border-glass); background: var(--bg-card); color: var(--text-primary); font-size: 0.85rem;"
+                >
+                <select id="batch-filter-sentiment" class="liquid-select" style="padding: 0.45rem 0.75rem; font-size: 0.85rem;">
+                  <option value="all">All Sentiments</option>
+                  <option value="positive">Happy Only</option>
+                  <option value="negative">Unhappy Only</option>
+                </select>
+                <button id="btn-export-batch-csv" class="btn-ios-secondary" style="font-size: 0.85rem; padding: 0.45rem 0.85rem;">
+                  📥 Export CSV
+                </button>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div style="overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-glass);">
+              <table class="batch-data-table" id="batch-table">
+                <thead>
+                  <tr>
+                    <th style="width: 45px;">#</th>
+                    <th>Customer feedback excerpt</th>
+                    <th style="width: 130px;">Result</th>
+                    <th style="width: 110px;">Confidence</th>
+                    <th style="width: 110px;">Agreement</th>
+                    <th style="width: 140px; text-align: center;">Live Studio</th>
+                  </tr>
+                </thead>
+                <tbody id="batch-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-brand">FineFoods AI</span>
+        <span class="footer-sub">&copy; 2026 Stanford SNAP Amazon Reviews Intelligence</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="/static/batch.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "original_record_count": 568454,
+  "cleaned_record_count": 393931,
+  "total_removed_records": 174523,
+  "duplicates_removed": 174521,
+  "invalid_helpfulness_removed": 2,
+  "empty_text_removed": 0,
+  "sentiment_distribution": {
+    "positive": 307052,
+    "negative": 57107,
+    "neutral": 29772,
+    "positive_pct": 77.95,
+    "negative_pct": 14.5,
+    "neutral_pct": 7.56
+  },
+  "score_distribution": {
+    "1": 36307,
+    "2": 20800,
+    "3": 29772,
+    "4": 56088,
+    "5": 250964
+  },
+  "binary_classification_ready_count": 364159,
+  "pipeline_execution_time_seconds": 22.8
+}

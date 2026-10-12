@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FineFoods AI - Home</title>
+  <meta name="description" content="Is this food review happy or unhappy? Paste any Amazon food review and our machine learning program tells you if the customer liked the product.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Soft Ambient Gradient Blobs (Liquid Glass Reflection) -->
+  <div class="liquid-bg">
+    <div class="liquid-orb orb-pink"></div>
+    <div class="liquid-orb orb-blue"></div>
+    <div class="liquid-orb orb-purple"></div>
+  </div>
+
+  <div class="site-wrapper">
+
+    <!-- Floating Pill-Shaped Navbar -->
+    <div class="navbar-pill-wrapper">
+      <header class="navbar-pill">
+        
+        <!-- Brand Link -->
+        <a href="/" class="brand-link">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="brand-title">FineFoods<span class="brand-ai-pill">AI</span></span>
+        </a>
+
+        <!-- Center Nav Links -->
+        <nav class="nav-links">
+          <a href="/" class="nav-link active">Live Studio</a>
+          <a href="/batch" class="nav-link">Batch Check</a>
+          <a href="/benchmarks" class="nav-link">Which model is best?</a>
+        </nav>
+
+        <!-- Right Actions: iOS Dark Mode Switch + 1 Main CTA -->
+        <div class="nav-actions">
+          <label class="ios-switch" title="Toggle Light / Dark Mode">
+            <input type="checkbox" id="ios-theme-toggle" aria-label="Toggle Dark Mode">
+            <span class="ios-switch-slider">
+              <span class="ios-switch-knob">🌙</span>
+            </span>
+          </label>
+
+          <a href="#analyzer" class="btn-ios-primary">
+            <span>Check a Review</span>
+          </a>
+        </div>
+
+      </header>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          
+          <div class="hero-pill-badge">
+            <span class="pulse-dot"></span>
+            <span>Built on real Amazon food reviews</span>
+          </div>
+
+          <!-- Plain Language Headline -->
+          <h1 class="hero-title">
+            Is this food review <span class="highlight">happy</span> or <span class="highlight">unhappy</span>?
+          </h1>
+
+          <!-- Simple Subtitle -->
+          <p class="hero-subtitle">
+            Paste any review. Our program reads it and tells you whether the customer liked the product.
+          </p>
+
+          <!-- Hero Actions -->
+          <div class="hero-actions">
+            <a href="#analyzer" class="btn-ios-primary">
+              <span>Write a review →</span>
+            </a>
+            <button class="btn-ios-secondary" id="hero-btn-sample">
+              <span>Try an Example</span>
+            </button>
+          </div>
+
+          <!-- Hero Stats Row: 4 Separate Easy-to-Read Stats -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-box">
+              <div class="stat-val-big">6</div>
+              <div class="stat-lbl-plain">models compared</div>
+            </div>
+            <div class="hero-stat-box">
+              <div class="stat-val-big">
+                <span>96.2 / 100</span>
+                <span class="tooltip-trigger" tabindex="0">
+                  i
+                  <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+                </span>
+              </div>
+              <div class="stat-lbl-plain">best score (Logistic Reg)</div>
+            </div>
+            <div class="hero-stat-box">
+              <div class="stat-val-big">348k</div>
+              <div class="stat-lbl-plain">reviews studied</div>
+            </div>
+            <div class="hero-stat-box">
+              <div class="stat-val-big">1,859</div>
+              <div class="stat-lbl-plain">used in this live app</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Column: Honest "Example Results" Glass Card -->
+        <div class="hero-preview-col">
+          <div class="liquid-card hero-preview-card">
+            
+            <div class="preview-card-header">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.2rem;">✨</span>
+                <strong style="font-size: 0.95rem; color: var(--text-primary);">Example results</strong>
+              </div>
+              <span class="preview-badge-honest">Sample Previews</span>
+            </div>
+
+            <div class="preview-examples-list">
+              
+              <div class="preview-example-item clickable" data-sample="0">
+                <div class="example-item-left">
+                  <span class="example-icon">☕</span>
+                  <div>
+                    <div class="example-item-text">Hazelnut coffee with smooth nutty aroma</div>
+                    <div style="font-size: 0.72rem; color: var(--text-muted);">Gourmet Roast</div>
+                  </div>
+                </div>
+                <span class="tag-pill happy">Happy customer (96% sure)</span>
+              </div>
+
+              <div class="preview-example-item clickable" data-sample="1">
+                <div class="example-item-left">
+                  <span class="example-icon">🥨</span>
+                  <div>
+                    <div class="example-item-text">Bag arrived punctured, chips were stale</div>
+                    <div style="font-size: 0.72rem; color: var(--text-muted);">Snack Pack</div>
+                  </div>
+                </div>
+                <span class="tag-pill unhappy">Unhappy customer (92% sure)</span>
+              </div>
+
+              <div class="preview-example-item clickable" data-sample="2">
+                <div class="example-item-left">
+                  <span class="example-icon">🍬</span>
+                  <div>
+                    <div class="example-item-text">Horrible chemical aftertaste from sweeteners</div>
+                    <div style="font-size: 0.72rem; color: var(--text-muted);">Fruit Syrup</div>
+                  </div>
+                </div>
+                <span class="tag-pill unhappy">Unhappy customer (87% sure)</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- "How It Works" Section -->
+    <section class="section-container" id="how-it-works">
+      <div class="section-header-center">
+        <h2 class="section-heading">How it works</h2>
+        <p class="section-subheading">
+          Computers cannot read feelings directly. Here is the 4-step journey every food review takes:
+        </p>
+      </div>
+
+      <div class="how-it-works-grid">
+        
+        <div class="liquid-card step-card">
+          <div class="step-icon-bubble">🧹</div>
+          <div class="step-num-badge">Step 1</div>
+          <h3 class="step-title">Clean the text</h3>
+          <p class="step-desc">We remove messy HTML tags, punctuation, and extra spaces so only the meaningful words remain.</p>
+        </div>
+
+        <div class="liquid-card step-card">
+          <div class="step-icon-bubble">🔢</div>
+          <div class="step-num-badge">Step 2</div>
+          <h3 class="step-title">Turn words into numbers</h3>
+          <p class="step-desc">Important words like "delicious" or "stale" get counted and converted into math scores (TF-IDF).</p>
+        </div>
+
+        <div class="liquid-card step-card">
+          <div class="step-icon-bubble">🗳️</div>
+          <div class="step-num-badge">Step 3</div>
+          <h3 class="step-title">Models vote</h3>
+          <p class="step-desc">6 different machine learning models study the numbers and decide if the review sounds happy or unhappy.</p>
+        </div>
+
+        <div class="liquid-card step-card">
+          <div class="step-icon-bubble">🎯</div>
+          <div class="step-num-badge">Step 4</div>
+          <h3 class="step-title">Show the result</h3>
+          <p class="step-desc">We show you the final answer, how confident the models were, and which words swayed the decision.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Review Analyzer Section -->
+    <section class="section-container" id="analyzer">
+      
+      <div class="section-header-center reveal-item">
+        <h2 class="section-heading">Try it yourself</h2>
+        <p class="section-subheading">
+          Type or paste any food review below, or click an example to see what our models think.
+        </p>
+      </div>
+
+      <!-- Quick Preset Chips -->
+      <div class="presets-chips-row reveal-item">
+        <span class="presets-label">Try an example:</span>
+        <div id="presets-container" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Main Analyzer Liquid Glass Card -->
+      <div class="liquid-card analyzer-card reveal-item">
+        
+        <!-- Input Area -->
+        <div class="input-header">
+          <label for="review-input" class="input-label">Customer review text</label>
+          <span class="char-counter" id="char-counter">0 characters</span>
+        </div>
+
+        <div class="textarea-glow-wrapper">
+          <textarea 
+            id="review-input" 
+            rows="4" 
+            placeholder="Paste or type a food review here... (for example: 'Loved this organic green tea! Great flavor, refreshing and delicate.')"
+            class="liquid-textarea"
+          ></textarea>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="controls-bar">
+          
+          <!-- iOS Segmented Control (Result Types) -->
+          <div>
+            <div class="ios-segmented-control" id="result-type-pills" role="tablist" aria-label="Result Views">
+              <span class="segmented-thumb" id="segmented-thumb" aria-hidden="true"></span>
+              <button class="segment-btn active" data-type="sentiment" role="tab" aria-selected="true" id="tab-sentiment" aria-controls="view-sentiment">
+                Result & Confidence
+              </button>
+              <button class="segment-btn" data-type="consensus" role="tab" aria-selected="false" id="tab-consensus" aria-controls="view-consensus">
+                Do the models agree?
+              </button>
+              <button class="segment-btn" data-type="words" role="tab" aria-selected="false" id="tab-words" aria-controls="view-words">
+                Words that mattered most
+              </button>
+            </div>
+          </div>
+
+          <!-- Plain Language Algorithm Selector -->
+          <div class="model-selector-wrapper">
+            <label id="model-select-label" for="model-select-compact" class="model-select-label">Model:</label>
+            <select id="model-select-compact" class="liquid-select">
+              <option value="ensemble_avg" selected>All 6 models combined (average)</option>
+              <option value="logistic_regression">Logistic Regression</option>
+              <option value="naive_bayes">Naive Bayes</option>
+              <option value="svm">Support Vector Machine (SVM)</option>
+              <option value="xgboost">XGBoost</option>
+              <option value="random_forest">Random Forest</option>
+              <option value="knn">K-Nearest Neighbors (KNN)</option>
+            </select>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button id="btn-clear" class="btn-ios-secondary" title="Clear review text">
+              <span>Clear</span>
+            </button>
+            <button id="btn-analyze" class="btn-ios-primary">
+              <span class="btn-spinner" id="btn-spinner" aria-hidden="true"></span>
+              <span class="btn-text">Check Review</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Output Result Panel -->
+        <div class="result-display-wrapper" id="result-display-wrapper">
+          
+          <!-- Default Empty State -->
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon">📝</div>
+            <div style="font-weight: 700; margin-bottom: 0.25rem; color: var(--text-primary);">Ready to read your review</div>
+            <p style="font-size: 0.85rem;">Click an example above or write your own review, then click "Check Review".</p>
+          </div>
+
+          <!-- Active Result Box -->
+          <div class="active-result-box" id="active-result-box" style="display: none;">
+            
+            <!-- Result View 1: Plain Result & Confidence -->
+            <div class="res-view" id="view-sentiment">
+              <div class="sentiment-banner" id="sentiment-banner">
+                <div class="banner-left">
+                  <div class="sentiment-emoji" id="sentiment-emoji">👍</div>
+                  <div>
+                    <span class="banner-model-tag" id="banner-active-algorithm">All 6 models combined</span>
+                    <h3 class="banner-verdict" id="banner-verdict">Happy customer (96% sure)</h3>
+                  </div>
+                </div>
+
+                <div class="banner-right">
+                  <div class="metric-block">
+                    <span class="metric-val" id="metric-confidence">96%</span>
+                    <span class="metric-lbl">Confidence</span>
+                  </div>
+                  <div class="metric-block">
+                    <span class="metric-val" id="metric-latency">2 ms</span>
+                    <span class="metric-lbl">Speed</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Probability Track -->
+              <div class="prob-labels">
+                <span class="prob-text-pos">Chance of happy: <strong id="val-pos-pct">96.2%</strong></span>
+                <span class="prob-text-neg">Chance of unhappy: <strong id="val-neg-pct">3.8%</strong></span>
+              </div>
+              <div class="prob-bar-container">
+                <div class="prob-fill-positive" id="prob-fill-positive" style="width: 96.2%;"></div>
+                <div class="prob-fill-negative" id="prob-fill-negative" style="width: 3.8%;"></div>
+              </div>
+            </div>
+
+            <!-- Result View 2: "Do the models agree?" -->
+            <div class="res-view" id="view-consensus">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary);">Do the models agree?</h4>
+                <span class="tag-pill happy" id="consensus-badge">6 of 6 models agree</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Here is what each of our 6 models predicted for this exact review:
+              </p>
+              <div class="consensus-cards-row" id="consensus-cards-container">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Result View 3: "Words that mattered most" -->
+            <div class="res-view" id="view-words">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary);">Words that mattered most</h4>
+                <span class="tag-pill" style="background: rgba(0,0,0,0.05); color: var(--text-muted);">Word influence</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Green words pushed the model toward <strong>happy</strong>; red words pushed it toward <strong>unhappy</strong>:
+              </p>
+              <div class="words-chips-container" id="words-chips-container">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- The 6 Algorithms Explained (Simple 1-Sentence Cards + Under the Hood) -->
+    <section class="section-container" id="models">
+      <div class="section-header-center">
+        <h2 class="section-heading">How each model works</h2>
+        <p class="section-subheading">
+          We compared 6 standard machine learning models. Here is what each one does in one plain sentence:
+        </p>
+      </div>
+
+      <!-- Crown Card: All 6 Models Combined (Ensemble Average) -->
+      <div class="liquid-card ensemble-card">
+        <div class="ensemble-card-body">
+          <div class="ensemble-card-info">
+            <div class="ensemble-card-header">
+              <span class="ensemble-card-icon">👑</span>
+              <h2 class="ensemble-card-title">All 6 models combined (Ensemble)</h2>
+              <span class="tag-pill happy">Recommended</span>
+            </div>
+            <p class="ensemble-card-desc">
+              All 6 models vote and we average their confidence. Combining different ways of thinking prevents any single model's mistake from ruining the answer.
+            </p>
+          </div>
+
+          <div class="ensemble-card-score">
+            <div class="model-score-box">
+              <div class="score-label-above">
+                <span>Combined Score</span>
+                <span class="tooltip-trigger" tabindex="0">
+                  i
+                  <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+                </span>
+              </div>
+              <div class="score-val-line">
+                <span class="score-val-unmeasured">Not measured yet</span>
+              </div>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="technical-accordion" style="margin-top: 1.25rem;">
+          <summary>Under the hood</summary>
+          <table class="tech-specs-table">
+            <tr><td>Ensemble Type</td><td>Soft-voting (probability mean)</td></tr>
+            <tr><td>Formula</td><td>P_avg(Happy) = 1/6 ∑ P_i(Happy)</td></tr>
+            <tr><td>Included Models</td><td>Logistic Regression, Naive Bayes, Linear SVM, XGBoost, Random Forest, KNN</td></tr>
+            <tr><td>Status</td><td>Not measured yet (requires complete test set ensemble pass)</td></tr>
+            <tr><td>Why it works</td><td>Condorcet's Jury Theorem: diverse independent votes cancel out individual error variance.</td></tr>
+          </table>
+        </details>
+      </div>
+
+      <div class="models-grid-simple">
+        
+        <!-- 1. Logistic Regression -->
+        <div class="liquid-card model-card-simple">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">⚖️</div>
+            <h3 class="model-card-name">Logistic Regression</h3>
+          </div>
+          <p class="model-one-liner">Gives every word a good or bad weight and adds them up.</p>
+          
+          <div class="model-score-box">
+            <div class="score-label-above">
+              <span>Score</span>
+              <span class="tooltip-trigger" tabindex="0">
+                i
+                <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+              </span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num">96.2</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width: 96.2%;"></div>
+            </div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Under the hood</summary>
+            <table class="tech-specs-table">
+              <tr><td>Family</td><td>Linear Model</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF (8k n-grams)</td></tr>
+              <tr><td>Hyperparameters</td><td>L2 penalty, C = 50.0</td></tr>
+              <tr><td>Formula</td><td>P(Y=1|X) = σ(wᵀX + b)</td></tr>
+              <tr><td>Measured Speed</td><td>&lt; 2 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 2. Naive Bayes -->
+        <div class="liquid-card model-card-simple">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">⚡</div>
+            <h3 class="model-card-name">Naive Bayes</h3>
+          </div>
+          <p class="model-one-liner">Counts how often words appear in happy vs unhappy reviews.</p>
+          
+          <div class="model-score-box">
+            <div class="score-label-above">
+              <span>Score</span>
+              <span class="tooltip-trigger" tabindex="0">
+                i
+                <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+              </span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num">94.4</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width: 94.4%;"></div>
+            </div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Under the hood</summary>
+            <table class="tech-specs-table">
+              <tr><td>Family</td><td>Probabilistic</td></tr>
+              <tr><td>Featurization</td><td>Count Vectorizer (BoW)</td></tr>
+              <tr><td>Hyperparameters</td><td>Laplace alpha = 0.10</td></tr>
+              <tr><td>Formula</td><td>P(c|x) ∝ P(c) ∏ P(xᵢ|c)</td></tr>
+              <tr><td>Measured Speed</td><td>&lt; 1 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 3. SVM -->
+        <div class="liquid-card model-card-simple">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">🛡️</div>
+            <h3 class="model-card-name">Support Vector Machine</h3>
+          </div>
+          <p class="model-one-liner">Draws the best dividing line between happy and unhappy reviews.</p>
+          
+          <div class="model-score-box">
+            <div class="score-label-above">
+              <span>Score</span>
+              <span class="tooltip-trigger" tabindex="0">
+                i
+                <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+              </span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num">94.1</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width: 94.1%;"></div>
+            </div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Under the hood</summary>
+            <table class="tech-specs-table">
+              <tr><td>Family</td><td>Maximum Margin Classifier</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF</td></tr>
+              <tr><td>Loss Function</td><td>Modified Huber (calibrated probabilities)</td></tr>
+              <tr><td>Optimization</td><td>SGD (alpha = 1e-4)</td></tr>
+              <tr><td>Measured Speed</td><td>&lt; 2 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 4. XGBoost -->
+        <div class="liquid-card model-card-simple">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">🚀</div>
+            <h3 class="model-card-name">XGBoost</h3>
+          </div>
+          <p class="model-one-liner">Many small decision trees, each fixing the previous one's mistakes.</p>
+          
+          <div class="model-score-box">
+            <div class="score-label-above">
+              <span>Score</span>
+              <span class="tooltip-trigger" tabindex="0">
+                i
+                <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+              </span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num">92.1</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width: 92.1%;"></div>
+            </div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Under the hood</summary>
+            <table class="tech-specs-table">
+              <tr><td>Family</td><td>Gradient Boosted Trees</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF</td></tr>
+              <tr><td>Hyperparameters</td><td>100 estimators, max_depth = 4</td></tr>
+              <tr><td>Learning Rate</td><td>0.10</td></tr>
+              <tr><td>Measured Speed</td><td>~ 5 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 5. Random Forest -->
+        <div class="liquid-card model-card-simple">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">🌲</div>
+            <h3 class="model-card-name">Random Forest</h3>
+          </div>
+          <p class="model-one-liner">Many decision trees vote on the answer.</p>
+          
+          <div class="model-score-box">
+            <div class="score-label-above">
+              <span>Score</span>
+              <span class="tooltip-trigger" tabindex="0">
+                i
+                <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+              </span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num">90.8</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width: 90.8%;"></div>
+            </div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Under the hood</summary>
+            <table class="tech-specs-table">
+              <tr><td>Family</td><td>Bagging Ensemble</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF</td></tr>
+              <tr><td>Hyperparameters</td><td>100 trees, max_depth = 12</td></tr>
+              <tr><td>Feature Sampling</td><td>sqrt(n_features)</td></tr>
+              <tr><td>Measured Speed</td><td>~ 4 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+        <!-- 6. KNN -->
+        <div class="liquid-card model-card-simple">
+          <div class="model-card-header-plain">
+            <div class="model-card-icon">📍</div>
+            <h3 class="model-card-name">K-Nearest Neighbors</h3>
+          </div>
+          <p class="model-one-liner">Finds the 7 most similar past reviews and copies the majority.</p>
+          
+          <div class="model-score-box">
+            <div class="score-label-above">
+              <span>Score</span>
+              <span class="tooltip-trigger" tabindex="0">
+                i
+                <span class="tooltip-bubble">If you pick one happy and one unhappy review at random, the model ranks the happy one higher this % of the time.</span>
+              </span>
+            </div>
+            <div class="score-val-line">
+              <span class="score-val-num">84.0</span>
+              <span class="score-val-max">/ 100</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width: 84.0%;"></div>
+            </div>
+          </div>
+
+          <details class="technical-accordion">
+            <summary>Under the hood</summary>
+            <table class="tech-specs-table">
+              <tr><td>Family</td><td>Instance-Based / Non-parametric</td></tr>
+              <tr><td>Featurization</td><td>TF-IDF Cosine</td></tr>
+              <tr><td>Hyperparameters</td><td>K = 7, weights = 'distance'</td></tr>
+              <tr><td>Distance Metric</td><td>Cosine distance</td></tr>
+              <tr><td>Measured Speed</td><td>~ 8 ms</td></tr>
+            </table>
+          </details>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/benchmarks" class="btn-ios-secondary">
+          <span>Compare all models in detail →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Limitations & Dataset Facts -->
+    <section class="section-container" id="limitations">
+      <div class="teacher-grid-two">
+        
+        <!-- Words that signal happy vs unhappy -->
+        <div class="liquid-card teacher-card" id="top-words-card">
+          <h3 class="teacher-card-title">
+            <span>✨</span> Words that signal happy vs unhappy
+          </h3>
+
+          <div id="top-words-content" class="top-words-content">
+            <!-- Group 1: Happy words -->
+            <div class="word-group">
+              <div class="word-group-label happy">
+                <span>😊</span> Happy words
+              </div>
+              <div class="word-chips-flow" id="happy-words-chips">
+                <!-- 8 green glass chips dynamically populated via /api/top-words -->
+              </div>
+            </div>
+
+            <!-- Group 2: Unhappy words -->
+            <div class="word-group" style="margin-top: 0.85rem;">
+              <div class="word-group-label unhappy">
+                <span>🙁</span> Unhappy words
+              </div>
+              <div class="word-chips-flow" id="unhappy-words-chips">
+                <!-- 8 red glass chips dynamically populated via /api/top-words -->
+              </div>
+            </div>
+
+            <!-- Note sentence under chips -->
+            <p class="top-words-note">
+              The model learned these words by reading thousands of real reviews.
+            </p>
+          </div>
+
+          <div id="top-words-fallback" class="top-words-fallback" style="display: none;">
+            <p class="top-words-error">Word list is not available right now.</p>
+          </div>
+        </div>
+
+        <!-- Dataset Mini Card -->
+        <div class="liquid-card teacher-card">
+          <h3 class="teacher-card-title">
+            <span>📊</span> Dataset Facts
+          </h3>
+          
+          <div class="dataset-stats-grid">
+            <div class="dataset-stat-cell">
+              <div class="dataset-stat-val">568,454</div>
+              <div class="dataset-stat-lbl">Total Reviews</div>
+            </div>
+            <div class="dataset-stat-cell">
+              <div class="dataset-stat-val">74,258</div>
+              <div class="dataset-stat-lbl">Products</div>
+            </div>
+            <div class="dataset-stat-cell">
+              <div class="dataset-stat-val">256,059</div>
+              <div class="dataset-stat-lbl">Users</div>
+            </div>
+          </div>
+
+          <!-- Class Imbalance Explanation -->
+          <div class="imbalance-banner">
+            <strong>Class split: 84% happy vs. 16% unhappy.</strong><br>
+            Because 84% of customers were already happy, a lazy model guessing "happy" every single time would still be right 84% of the time! That is why we evaluate models with ranking scores (ROC-AUC out of 100) instead of raw accuracy.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example Reviews from Dataset -->
+    <section class="section-container" id="feed">
+      <div class="section-header-center">
+        <h2 class="section-heading">Example reviews from the dataset</h2>
+        <p class="section-subheading">
+          These are authentic customer reviews loaded from our dataset CSV file. Click any card to test it live.
+        </p>
+      </div>
+
+      <div class="reviews-feed-grid" id="reviews-feed-container">
+        <!-- Dynamically loaded via /api/reviews -->
+      </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-brand">FineFoods AI</span>
+        <span class="footer-sub">&copy; 2026</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Controller -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
